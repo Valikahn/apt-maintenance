@@ -569,6 +569,85 @@ For issues, questions or suggestions:
 
 Do not publish logs containing hostnames, usernames, internal addresses or other sensitive system details without reviewing and redacting them first.
 
+## File Integrity Verification
+
+The checksums below allow users to confirm that their downloaded copy of `system_maintenance.sh` matches the original file published with this release.
+
+> [!IMPORTANT]
+> A matching checksum confirms file integrity only. It shows that the downloaded file is identical to the published version, but it does not independently prove authorship. Always obtain the script and checksum values from the official repository or release page.
+
+### Published Checksums
+
+| Algorithm   | Checksum                                                                                                                           |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **MD5**     | `544742ed0f0601840c90d8008aff3f89`                                                                                                 |
+| **SHA-1**   | `995090643a0485cc4d41c8bceb36e6a97e33795e`                                                                                         |
+| **SHA-256** | `f5e829f87ab629ab2ac703313e9742448da18bb39ecf90d846d0690ef0006fb1`                                                                 |
+| **SHA-384** | `48912397743009e9b396b2f9ef97588024a89d8a7ac4b7c145130e05aac664389de94f8f448750d0744c2c71c8c6af25`                                 |
+| **SHA-512** | `fbede314c391a5ae4f2b5357db966a6c776fa102625e2ff307f7f03d61f4eb8391f951463fb6da61c0e708954e04ef75c8b1a59775665f323d77aa28cdfc1868` |
+| **BLAKE2b** | `41eb50e3237a692c9d06e4ad3baa3518d042becd1796b909fc80f6f62a82e103d587aca4e14e8132ef5f461fe7862c5b65faf536a0be3f212de93772fe5c98a3` |
+
+SHA-256 is recommended for routine integrity verification. MD5 and SHA-1 are included only for legacy compatibility and should not be relied upon for security-sensitive validation.
+
+### Calculate the Checksums
+
+From the directory containing `system_maintenance.sh`, run:
+
+```bash
+md5sum system_maintenance.sh
+sha1sum system_maintenance.sh
+sha256sum system_maintenance.sh
+sha384sum system_maintenance.sh
+sha512sum system_maintenance.sh
+b2sum system_maintenance.sh
+```
+
+Compare each calculated value with the corresponding published checksum above.
+
+### Automatic SHA-256 Verification
+
+Run the following command to verify the file automatically:
+
+```bash
+echo "f5e829f87ab629ab2ac703313e9742448da18bb39ecf90d846d0690ef0006fb1  system_maintenance.sh" | sha256sum --check
+```
+
+A successful verification displays:
+
+```text
+system_maintenance.sh: OK
+```
+
+A failed verification displays:
+
+```text
+system_maintenance.sh: FAILED
+```
+
+Do not execute the script when verification fails. Delete the file, download it again from the official repository and repeat the check.
+
+### Verify All Published Checksums
+
+The following commands validate the file against every published checksum:
+
+```bash
+echo "544742ed0f0601840c90d8008aff3f89  system_maintenance.sh" | md5sum --check
+echo "995090643a0485cc4d41c8bceb36e6a97e33795e  system_maintenance.sh" | sha1sum --check
+echo "f5e829f87ab629ab2ac703313e9742448da18bb39ecf90d846d0690ef0006fb1  system_maintenance.sh" | sha256sum --check
+echo "48912397743009e9b396b2f9ef97588024a89d8a7ac4b7c145130e05aac664389de94f8f448750d0744c2c71c8c6af25  system_maintenance.sh" | sha384sum --check
+echo "fbede314c391a5ae4f2b5357db966a6c776fa102625e2ff307f7f03d61f4eb8391f951463fb6da61c0e708954e04ef75c8b1a59775665f323d77aa28cdfc1868  system_maintenance.sh" | sha512sum --check
+echo "41eb50e3237a692c9d06e4ad3baa3518d042becd1796b909fc80f6f62a82e103d587aca4e14e8132ef5f461fe7862c5b65faf536a0be3f212de93772fe5c98a3  system_maintenance.sh" | b2sum --check
+```
+
+All six commands should return:
+
+```text
+system_maintenance.sh: OK
+```
+
+> [!NOTE]
+> Any change to the script, including whitespace, comments or line endings, will produce different checksum values. Update the published checksums whenever the file changes.
+
 ## Version History
 
 ### Version 1.0 - Current
