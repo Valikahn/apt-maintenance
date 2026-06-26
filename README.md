@@ -613,6 +613,5 @@ SHA-256 is recommended for routine integrity verification. MD5 and SHA-1 are inc
 
 ---
 
-**Made with ❤️ by [Valikahn](https://github.com/Valikahn)**
-
+**Made with ❤️ by [Valikahn](https://github.com/Valikahn)**  
 ⭐ If this project is useful, consider starring it on GitHub.
