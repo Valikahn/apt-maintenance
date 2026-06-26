@@ -593,10 +593,10 @@ SHA-256 is recommended for routine integrity verification. MD5 and SHA-1 are inc
 Run the following command to verify the file automatically:
 
 ```bash
-echo "544742ed0f0601840c90d8008aff3f89  system_maintenance.sh" | md5sum --check
-echo "995090643a0485cc4d41c8bceb36e6a97e33795e  system_maintenance.sh" | sha1sum --check
-echo "f5e829f87ab629ab2ac703313e9742448da18bb39ecf90d846d0690ef0006fb1  system_maintenance.sh" | sha256sum --check
-echo "48912397743009e9b396b2f9ef97588024a89d8a7ac4b7c145130e05aac664389de94f8f448750d0744c2c71c8c6af25  system_maintenance.sh" | sha512sum --check
+echo "fd26e0cfff14961932f6e94f55151d7c  system_maintenance.sh" | md5sum --check
+echo "866c4fca99c56d8b7f1fe49a93d69f7ddc409177  system_maintenance.sh" | sha1sum --check
+echo "262aaffc09cdd0e0238f781f1b3e07c34528f34fb5a4e001ba4ac901909fe12b  system_maintenance.sh" | sha256sum --check
+echo "0a9c6e52539ceeeb146fa50766905f7dcfa25ae362f871d567e0149e9ca7ead85a0375ab9d88e149aebf6372cbd7682e  system_maintenance.sh" | sha512sum --check
 ```
 
 A successful verification displays:
