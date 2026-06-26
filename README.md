@@ -3,7 +3,7 @@
 ![GitHub](https://img.shields.io/github/license/Valikahn/System-Maintenance-and-Update)
 ![Bash](https://img.shields.io/badge/Bash-4.0%2B-blue)
 ![Platform](https://img.shields.io/badge/Platform-Debian%2FUbuntu%2FKali-lightgrey)
-![Version](https://img.shields.io/badge/Version-3.4-brightgreen)
+![Version](https://img.shields.io/badge/Version-1.0-brightgreen)
 
 A comprehensive system-maintenance script for Debian-based Linux distributions. It automates package updates, package cleanup, service restarts, reboot detection, logging and desktop notifications through a structured, interactive terminal interface.
 
@@ -25,9 +25,7 @@ A comprehensive system-maintenance script for Debian-based Linux distributions. 
 - [Troubleshooting](#troubleshooting)
 - [Security Considerations](#security-considerations)
 - [Known Limitations](#known-limitations)
-- [Contributing](#contributing)
 - [Licence](#licence)
-- [Acknowledgements](#acknowledgements)
 - [Support](#support)
 - [Version History](#version-history)
 
@@ -120,50 +118,6 @@ The script is intended for Debian-based Linux distributions that use APT and sys
 | Disk space | At least 1 GB free on `/` |
 | Kernel files | `/boot/vmlinuz-*` for kernel-version comparison |
 
-### Commands Used
-
-The script relies on standard utilities including:
-
-```text
-apt
-apt-get
-awk
-basename
-cat
-chmod
-clear
-date
-df
-dpkg
-eval
-grep
-hostname
-id
-logname
-ls
-mkdir
-ping
-rm
-sed
-sleep
-sort
-sudo
-systemctl
-tail
-tr
-uname
-uptime
-xargs
-```
-
-Optional or conditionally used commands include:
-
-- `lsb_release` - Improves operating-system identification.
-- `lsof` - Enables scanning for processes using deleted libraries.
-- `notify-send` - Enables desktop notifications.
-- `logrotate` - Processes the generated rotation policy.
-- `needrestart` - Installed by the script when it is not already available.
-
 ## Installation
 
 ### Option 1: Clone the Repository
@@ -178,22 +132,6 @@ chmod +x system_maintenance.sh
 
 ```bash
 wget https://raw.githubusercontent.com/Valikahn/System-Maintenance-and-Update/main/system_maintenance.sh
-chmod +x system_maintenance.sh
-```
-
-### Option 3: Use the Versioned Filename
-
-When the downloaded file is named `system_maintenance_v3.4.sh`, either run it under that name:
-
-```bash
-chmod +x system_maintenance_v3.4.sh
-sudo ./system_maintenance_v3.4.sh
-```
-
-or rename it:
-
-```bash
-mv system_maintenance_v3.4.sh system_maintenance.sh
 chmod +x system_maintenance.sh
 ```
 
@@ -455,7 +393,7 @@ The script may create or modify the following locations:
 ## Dry-Run Behaviour
 
 > [!CAUTION]
-> Version 3.4 does not provide a completely side-effect-free dry run.
+> Version 1.0 does not provide a completely side-effect-free dry run.
 
 Commands passed through `execute_with_correction()` are simulated when dry-run mode is enabled. This includes the main APT cleanup, update, upgrade and autoremove commands.
 
@@ -631,51 +569,9 @@ The script handles `INT`, `TERM` and `HUP` signals through a trap. Review the ma
 - The script does not create a filesystem or virtual-machine snapshot.
 - The script does not itself install `lsof`, `notify-send` or `logrotate`.
 
-## Contributing
-
-Contributions are welcome.
-
-1. Fork the repository.
-2. Create a feature branch:
-
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-
-3. Commit the change:
-
-   ```bash
-   git commit -m "Add some AmazingFeature"
-   ```
-
-4. Push the branch:
-
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-
-5. Open a pull request.
-
-Useful contribution areas include:
-
-- Making dry-run mode fully side-effect-free
-- Detecting active package-manager processes safely
-- Supporting both `ssh.service` and `sshd.service`
-- Replacing the fixed connectivity test with repository-aware checks
-- Improving exit-code propagation and completion summaries
-- Adding command-line flags for unattended use
-- Adding ShellCheck and automated test workflows
-- Adding distribution and container compatibility checks
-
 ## Licence
 
 This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- [`needrestart`](https://packages.debian.org/needrestart) - Detects processes and services that should be restarted after library upgrades.
-- Debian, Ubuntu and Kali Linux communities - Provide the package-management ecosystem, documentation and system utilities used by the script.
-- Project contributors - Help test, document and improve the maintenance workflow.
 
 ## Support
 
@@ -689,37 +585,21 @@ Do not publish logs containing hostnames, usernames, internal addresses or other
 
 ## Version History
 
-### Version 3.4 - Current
+### Version 1.0 - Current
 
-- Removed Snapper snapshot functionality
-- Streamlined the maintenance process
-- Improved retry and corrective-action handling
-- Enhanced desktop-notification logic
-- Added automatic service restarts through `needrestart`
-
-### Version 3.3
-
-- Added Snapper integration
-- Automated snapshot creation
-- Improved configuration detection
-
-### Version 3.2
-
-- Replaced Timeshift with Snapper
-- Improved filesystem support
-
-### Version 3.1
-
-- Added Timeshift snapshot support
-- Added interactive snapshot prompts
-- Improved error messages
-
-### Version 3.0
-
-- Added pre-flight checks
+- Initial public release
+- Added root privilege validation
+- Added pre-flight network and disk-space checks
+- Added automated APT update, distribution upgrade and package cleanup
+- Added retry handling and corrective DPKG actions
+- Added `needrestart` installation and automatic service-restart configuration
+- Added selected system-service restarts
+- Added deleted-library scanning through `lsof`
+- Added timestamped logging and automated log rotation
 - Added desktop notifications
-- Added automated log rotation
-- Added dry-run selection
+- Added reboot detection and an interactive reboot prompt
+- Added interactive dry-run selection
+- Added centralised version-control variables for the version, month and year
 
 ---
 
