@@ -55,43 +55,29 @@ Store screenshots in the repository's `images` directory using the filenames sho
 
 ### Initial Screen and System Information
 
-> Add a screenshot showing the welcome banner and system-information display.
-
 ![System Information](./img/01-system-info.png)
 
 ### Warning and Confirmation
-
-> Add a screenshot showing the warning message, dry-run selection and confirmation prompt.
 
 ![Confirmation Prompt](./img/02-confirmation.png)
 
 ### Pre-Flight Checks
 
-> Add a screenshot showing network-connectivity and disk-space validation.
-
 ![Pre-Flight Checks](./img/03-preflight.png)
 
 ### Package Update Process
-
-> Add a screenshot showing the APT update and distribution-upgrade process.
 
 ![Update Process](./img/04-updates.png)
 
 ### Service Management
 
-> Add a screenshot showing `needrestart` detecting and restarting services.
-
 ![Service Management](./img/05-services.png)
 
 ### Reboot Prompt
 
-> Add a screenshot showing the reboot-required warning and reboot prompt.
-
 ![Reboot Prompt](./img/06-reboot.png)
 
 ### Desktop Notification
-
-> Add a screenshot showing the desktop notification.
 
 ![Desktop Notification](./img/07-notification.png)
 
