@@ -577,7 +577,7 @@ This project is licensed under the GNU General Public License v3.0. See the [LIC
 
 For issues, questions or suggestions:
 
-- Open an issue in the [GitHub issue tracker](https://github.com/Valikahn/System-Maintenance-and-Update/issues).
+- Open an issue in the [GitHub issue tracker](https://github.com/Valikahn/apt-maintenance/issues).
 - Search existing issues before creating a new report.
 - Include the operating-system version, script version and relevant redacted log output.
 
