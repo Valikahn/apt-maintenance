@@ -110,8 +110,9 @@ The script is intended for Debian-based Linux distributions that use APT and sys
 ### Option 1: Clone the Repository
 
 ```bash
-git clone https://github.com/Valikahn/System-Maintenance-and-Update.git
+mkdir -p cd System-Maintenance-and-Update
 cd System-Maintenance-and-Update
+git clone https://github.com/Valikahn/System-Maintenance-and-Update.git
 chmod +x system_maintenance.sh
 ```
 
