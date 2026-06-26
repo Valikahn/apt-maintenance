@@ -588,33 +588,9 @@ The checksums below allow users to confirm that their downloaded copy of `system
 
 SHA-256 is recommended for routine integrity verification. MD5 and SHA-1 are included only for legacy compatibility and should not be relied upon for security-sensitive validation.
 
-### Automatic SHA-256 Verification
-
-Run the following command to verify the file automatically:
-
-```bash
-echo "fd26e0cfff14961932f6e94f55151d7c  system_maintenance.sh" | md5sum --check
-echo "866c4fca99c56d8b7f1fe49a93d69f7ddc409177  system_maintenance.sh" | sha1sum --check
-echo "262aaffc09cdd0e0238f781f1b3e07c34528f34fb5a4e001ba4ac901909fe12b  system_maintenance.sh" | sha256sum --check
-echo "0a9c6e52539ceeeb146fa50766905f7dcfa25ae362f871d567e0149e9ca7ead85a0375ab9d88e149aebf6372cbd7682e  system_maintenance.sh" | sha512sum --check
-```
-
-A successful verification displays:
-
-```text
-system_maintenance.sh: OK
-```
-
-A failed verification displays:
-
-```text
-system_maintenance.sh: FAILED
-```
-
-Do not execute the script when verification fails. Delete the file, download it again from the official repository and repeat the check.
-
 > [!NOTE]
 > Any change to the script, including whitespace, comments or line endings, will produce different checksum values. Update the published checksums whenever the file changes.
+> Do not execute the script when verification fails. Delete the file, download it again from the official repository and repeat the check.
 > If this is the case do not use this script and please inform me as soon as possible.
 
 ## Version History
