@@ -27,6 +27,7 @@ A comprehensive system-maintenance script for Debian-based Linux distributions. 
 - [Known Limitations](#known-limitations)
 - [Licence](#licence)
 - [Support](#support)
+- [File Integrity Verification](#file-integrity-verification)
 - [Version History](#version-history)
 
 ## Features
