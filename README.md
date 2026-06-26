@@ -110,16 +110,15 @@ The script is intended for Debian-based Linux distributions that use APT and sys
 ### Option 1: Clone the Repository
 
 ```bash
-mkdir -p System-Maintenance-and-Update
-cd System-Maintenance-and-Update
-git clone https://github.com/Valikahn/System-Maintenance-and-Update.git
+git clone https://github.com/Valikahn/apt-maintenance.git
+cd apt-maintenance
 chmod +x system_maintenance.sh
 ```
 
 ### Option 2: Download the Script Directly
 
 ```bash
-wget https://raw.githubusercontent.com/Valikahn/System-Maintenance-and-Update/main/system_maintenance.sh
+wget https://raw.githubusercontent.com/Valikahn/apt-maintenance/main/system_maintenance.sh
 chmod +x system_maintenance.sh
 ```
 
