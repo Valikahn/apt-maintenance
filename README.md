@@ -114,6 +114,7 @@ The script is intended for Debian-based Linux distributions that use APT and sys
 git clone https://github.com/Valikahn/apt-maintenance.git
 cd apt-maintenance
 chmod +x system_maintenance.sh
+./system_maintenance.sh
 ```
 
 ### Option 2: Download the Script Directly
@@ -121,6 +122,7 @@ chmod +x system_maintenance.sh
 ```bash
 wget https://raw.githubusercontent.com/Valikahn/apt-maintenance/main/system_maintenance.sh
 chmod +x system_maintenance.sh
+./system_maintenance.sh
 ```
 
 ## Usage
