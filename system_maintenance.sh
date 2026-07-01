@@ -435,6 +435,7 @@ prompt_confirmation() {
     
     case "$response" in
         [yY][eE][sS]|[yY]|"")
+			clear
             print_info "Continuing with system maintenance..."
 			sleep $MAX_SLEEP
 			clear
