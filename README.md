@@ -1,7 +1,7 @@
 # System Maintenance and Update Script
 ![Banner](./img/banner.png)
 
-![GitHub](https://img.shields.io/github/license/Valikahn/apt-maintenance)
+[![GitHub](https://img.shields.io/github/license/Valikahn/apt-maintenance)](./LICENSE)
 ![Bash](https://img.shields.io/badge/Bash-4.0%2B-blue)
 ![Platform](https://img.shields.io/badge/Platform-Debian%2FUbuntu%2FKali-lightgrey)
 ![Version](https://img.shields.io/badge/Version-1.0-brightgreen)
