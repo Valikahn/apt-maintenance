@@ -16,8 +16,7 @@ A comprehensive system-maintenance script for Debian-based Linux distributions. 
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Installation / Usage](#installation--usage)
 - [Maintenance Workflow](#maintenance-workflow)
 - [Logging](#logging)
 - [Configuration Changes](#configuration-changes)
@@ -106,29 +105,34 @@ The script is intended for Debian-based Linux distributions that use APT and sys
 | Disk space | At least 1 GB free on `/` |
 | Kernel files | `/boot/vmlinuz-*` for kernel-version comparison |
 
-## Installation
+## Installation / Usage
 
 ### Download the Script Directly
 
 ```bash
 wget https://raw.githubusercontent.com/Valikahn/apt-maintenance/main/system_maintenance.sh
-chmod +x system_maintenance.sh
-./system_maintenance.sh
 ```
 
-## Usage
-
-### Recommended Command
+### Make Executable
 
 ```bash
-sudo ./system_maintenance.sh
+chmod +x system_maintenance.sh
+```
+
+### Execute
+
+```bash
+./system_maintenance.sh
 ```
 
 ### Run from a Root Shell
 
-```bash
-su -c './system_maintenance.sh'
-```
+> [!IMPORTANT]
+> This script must be executed with root privileges.
+>
+> Please run using one of the following methods:
+>   1. ```sudo ./system_maintenance.sh```
+>   2. ```su -c './system_maintenance.sh'```
 
 ### Interactive Prompts
 
