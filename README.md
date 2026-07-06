@@ -130,7 +130,7 @@ chmod +x system_maintenance.sh
 > [!IMPORTANT]
 > This script must be executed with root privileges.
 >
-> Please run using one of the following methods:
+> Please run using one of the following methods if not logged in with root account/permission:
 >   1. ```sudo ./system_maintenance.sh```
 >   2. ```su -c './system_maintenance.sh'```
 
