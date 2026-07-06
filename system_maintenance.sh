@@ -192,19 +192,19 @@ send_desktop_notification() {
     fi
 }
 
-# Function to execute commands with error handling
+# Function to execute commands with error handling and generic repository self-healing
 execute_with_correction() {
     local cmd=$1
     local description=$2
     local attempt=1
-
+    
     if [ "$DRY_RUN" = true ]; then
         print_warning "[DRY RUN] Would execute: $description"
         print_action "Command: $cmd"
         log "INFO" "[DRY RUN] Would execute: $description"
         return 0
     fi
-
+    
     print_action "Executing: $description"
     
     while [ $attempt -le $MAX_RETRIES ]; do
@@ -214,15 +214,52 @@ execute_with_correction() {
         
         if eval "$cmd" >> "$LOG_FILE" 2>&1; then
             print_success "$description completed successfully"
-			sleep $MAX_SLEEP
+            sleep $MAX_SLEEP
             return 0
         else
             local exit_code=$?
             print_error "$description failed with exit code $exit_code"
-			sleep $MAX_SLEEP
+            
+            # GENERIC SELF-HEALING FOR APT REPOSITORY FAILURES
+            if [[ "$description" == *"Updating package lists"* ]] || [[ "$cmd" == *"apt update"* ]]; then
+                print_info "Analyzing apt update failure for problematic repositories..."
+                
+                local failing_repo=""
+                # Pattern 1: Match "The repository 'URL' is not signed."
+                failing_repo=$(grep "The repository" "$LOG_FILE" 2>/dev/null | tail -n 1 | sed -n "s/.*The repository '\([^']*\)'.*/\1/p" | awk '{print $1}')
+                
+                # Pattern 2: Match "OpenPGP signature verification failed: URL"
+                if [ -z "$failing_repo" ]; then
+                    failing_repo=$(grep "signature verification failed" "$LOG_FILE" 2>/dev/null | tail -n 1 | grep -E -o 'https?://[^ ]+')
+                fi
+                
+                if [ -n "$failing_repo" ]; then
+                    print_warning "Detected problematic repository: $failing_repo"
+                    print_info "Searching for and disabling the offending repository source..."
+                    
+                    # Find the source file containing this URL (checks both sources.list.d and main sources.list)
+                    local source_file=$(grep -rl "$failing_repo" /etc/apt/sources.list.d/ /etc/apt/sources.list 2>/dev/null | head -n 1)
+                    
+                    if [ -n "$source_file" ]; then
+                        local backup_file="${source_file}.disabled.${TIMESTAMP}"
+                        print_action "Disabling: $source_file -> $backup_file"
+                        mv "$source_file" "$backup_file" >> "$LOG_FILE" 2>&1
+                        print_success "Problematic repository disabled. Clearing apt lists for a clean retry."
+                        
+                        # Clear apt lists to ensure a fresh start on the next retry
+                        rm -rf /var/lib/apt/lists/* >> "$LOG_FILE" 2>&1
+                    else
+                        print_warning "Could not automatically locate the source file for $failing_repo"
+                    fi
+                else
+                    print_info "Could not automatically identify the failing repository from logs."
+                fi
+            fi
+            
+            sleep $MAX_SLEEP
             
             if [ $attempt -lt $MAX_RETRIES ]; then
-                print_info "Deploying corrective actions..."
+                print_info "Deploying standard corrective actions..."
                 rm -f /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/cache/apt/archives/lock >> "$LOG_FILE" 2>&1
                 dpkg --configure -a >> "$LOG_FILE" 2>&1 || true
                 print_info "Waiting ${RETRY_DELAY} seconds before retry..."
@@ -231,7 +268,7 @@ execute_with_correction() {
         fi
         ((attempt++))
     done
-
+    
     print_error "Critical failure: '$description' failed after $MAX_RETRIES attempts"
     return 1
 }
