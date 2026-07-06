@@ -108,16 +108,7 @@ The script is intended for Debian-based Linux distributions that use APT and sys
 
 ## Installation
 
-### Option 1: Clone the Repository
-
-```bash
-git clone https://github.com/Valikahn/apt-maintenance.git
-cd apt-maintenance
-chmod +x system_maintenance.sh
-./system_maintenance.sh
-```
-
-### Option 2: Download the Script Directly
+### Download the Script Directly
 
 ```bash
 wget https://raw.githubusercontent.com/Valikahn/apt-maintenance/main/system_maintenance.sh
