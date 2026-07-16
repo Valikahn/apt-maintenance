@@ -1,0 +1,38 @@
+# Visual Studio cache/options directory
+.vs/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Bb]uild/
+
+# Build logs
+*.log
+[Bb]uild[Ll]og.*
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+
+# NuGet Packages (if using Package Restore)
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+
+# SQL Server files
+*.mdf
+*.ldf   
