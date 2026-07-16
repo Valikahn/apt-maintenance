@@ -579,10 +579,10 @@ The checksums below allow users to confirm that their downloaded copy of `system
 
 | Algorithm   | Checksum                                                                                                                           |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **MD5**     | `9c7cb4a57ec11b6d4005f04304b102d1`                                                                                                 |
-| **SHA-1**   | `7df731323e2f588fb3045163b86a1f24a1e9350b`                                                                                         |
-| **SHA-256** | `cde3356487f3b7bae952a7c4d4c23431dd8d9cfb37f1479206476356a81b63e1`                                                                 |
-| **SHA-384** | `2acb094f7a28704963725b8ddd5583ac0382e142b88660fc52f86836822be5d0414a197de2cf010da0eb9b793344face`                                 |
+| **MD5**     | `fc6802167f440cc49d456d70b639b387`                                                                                                 |
+| **SHA-1**   | `5447322ac982a877e2e06f54bcb482fc8ab591be`                                                                                         |
+| **SHA-256** | `217d6ba066d583f9c30bb33b6287206aace4db7be7314b15d53fdab06f1c8590`                                                                 |
+| **SHA-384** | `4609fff76bc6424158d23c7e71fd233853dc79191029b4f85f1180cd25d918c9a65b3f3b98cc7fa5647ca05465ca65e4`                                 |
 
 SHA-256 is recommended for routine integrity verification. MD5 and SHA-1 are included only for legacy compatibility and should not be relied upon for security-sensitive validation.
 
@@ -610,6 +610,7 @@ SHA-256 is recommended for routine integrity verification. MD5 and SHA-1 are inc
 - Added centralised version-control variables for the version, month and year
 
 ---
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/v4l1k4hn)  
 
-**Made with ❤️ by [Valikahn](https://github.com/Valikahn)**  
+**Powered on ☕ made with ❤️ by [V4L1K4HN](https://tryhackme.com/p/V4L1K4HN)**  
 ⭐ If this project is useful, consider starring it on GitHub.
