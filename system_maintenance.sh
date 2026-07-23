@@ -509,7 +509,7 @@ echo "║                                                          ║"
 echo "║              Version $VERSION - $MONTH $YEAR                     ║"
 echo "║                                                          ║"
 echo "║                      V4L1K4HN                            ║"
-echo "║              http://www.insentrica.com                   ║
+echo "║              http://www.insentrica.com                   ║"
 echo "║                                                          ║"
 echo "╚══════════════════════════════════════════════════════════╝"
 echo -e "${NC}"
