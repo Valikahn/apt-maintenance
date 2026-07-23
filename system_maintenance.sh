@@ -2,7 +2,8 @@
 
 ###############################################################################
 # System Maintenance and Update Script with Service Restart
-# Author: Assistant
+# Author: V4L1K4HN
+# Web: http://www.insentrica.com
 # Date: June 26, 2026
 # Description: Performs comprehensive system updates, cleanup, automatic
 #              service restarts with robust error handling and logging.
@@ -508,6 +509,7 @@ echo "║                                                          ║"
 echo "║              Version $VERSION - $MONTH $YEAR                     ║"
 echo "║                                                          ║"
 echo "║                      V4L1K4HN                            ║"
+echo "║              http://www.insentrica.com                   ║
 echo "║                                                          ║"
 echo "╚══════════════════════════════════════════════════════════╝"
 echo -e "${NC}"
