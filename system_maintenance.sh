@@ -4,7 +4,7 @@
 # System Maintenance and Update Script with Service Restart
 # Author: V4L1K4HN
 # Web: http://www.insentrica.com
-# Date: June 26, 2026
+# Date: 23 July 2026
 # Description: Performs comprehensive system updates, cleanup, automatic
 #              service restarts with robust error handling and logging.
 ###############################################################################
@@ -25,7 +25,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # Version Control
-VERSION=1.0
+VERSION=1.1
 MONTH="June"
 YEAR=2026
 
