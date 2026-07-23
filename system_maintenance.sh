@@ -594,7 +594,7 @@ echo -e "${CYAN}Summary:${NC}"
 echo -e "  • Log file: ${WHITE}${LOG_FILE}${NC}"
 echo -e "  • Completed: $(date +"%Y-%m-%d %H:%M:%S")"
 if [ "$DRY_RUN" = true ]; then
-    echo -e "  • Mode: ${YELLOW}DRY RUN (no changes made)${NC}"
+    echo -e `  • Mode: ${YELLOW}DRY RUN (no changes made)${NC}`
 fi
 echo ""
 
