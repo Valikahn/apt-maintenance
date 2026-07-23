@@ -579,10 +579,10 @@ The checksums below allow users to confirm that their downloaded copy of `system
 
 | Algorithm   | Checksum                                                                                                                           |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **MD5**     | `fc6802167f440cc49d456d70b639b387`                                                                                                 |
-| **SHA-1**   | `5447322ac982a877e2e06f54bcb482fc8ab591be`                                                                                         |
-| **SHA-256** | `217d6ba066d583f9c30bb33b6287206aace4db7be7314b15d53fdab06f1c8590`                                                                 |
-| **SHA-384** | `4609fff76bc6424158d23c7e71fd233853dc79191029b4f85f1180cd25d918c9a65b3f3b98cc7fa5647ca05465ca65e4`                                 |
+| **MD5**     | `b6d53a3d50a46c24aba9a409b45621de`                                                                                                 |
+| **SHA-1**   | `b67654863059de7536eebf8d711f4a03de9af48f`                                                                                         |
+| **SHA-256** | `18474445ec5574a2f7cc63e5a74d0027dfc1be7c861b1bbbf3dd3a9333a23092`                                                                 |
+| **SHA-384** | `5e5879b621ee6d664b540d3d89b1dc83d74198d3d365857ed47466e16f7bd9ce63b7d33b56cac8229e64de218c212d96`                                 |
 
 SHA-256 is recommended for routine integrity verification. MD5 and SHA-1 are included only for legacy compatibility and should not be relied upon for security-sensitive validation.
 
