@@ -26,7 +26,7 @@ fi
 
 # Version Control
 VERSION=1.1
-MONTH="June"
+MONTH="July"
 YEAR=2026
 
 # Configuration
